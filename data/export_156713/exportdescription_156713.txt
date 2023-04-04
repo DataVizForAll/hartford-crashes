@@ -1,0 +1,4 @@
+Dataset: mmucc
+Date From:01/01/2018
+Date To:12/31/2022
+Towns:Hartford
