@@ -1,7 +1,7 @@
 var map = L.map('map', {
     zoomControl: false,
-    center: [41.761755, -72.765270],
-    zoom: 13,
+    center: [41.763, -72.69],
+    zoom: 15,
     minZoom: 12,
     attributionControl: false,
     preferCanvas: true
@@ -37,8 +37,8 @@ function tsToDate(ts) {
 }
 
 // display initial data, where Jan = 0 and Dec = 11
-var initFrom = dateToTS(new Date(2020, 0, 1));
-var initTo = dateToTS(new Date(2023, 3, 1));
+var initFrom = dateToTS(new Date(2021, 0, 1));
+var initTo = dateToTS(new Date(2022, 11, 31));
 
 Papa.parse('./data/crashes.csv', {
     download: true,
@@ -59,7 +59,7 @@ Papa.parse('./data/crashes.csv', {
                 : ('From ' + formattedFrom + ' to ' + formattedTo)
 
             text += ', there ' + (crashesTotal === 1 ? 'was ' : 'were ') + (crashesTotal === 0 ? 'no' : crashesTotal.toLocaleString())
-            text += ' car crash' + (crashesTotal === 1 ? '' : 'es') + ' in West Hartford.'
+            text += ' car crash' + (crashesTotal === 1 ? '' : 'es') + ' in Hartford.'
 
             if (crashesTotal > 1) {
                 text += ' Of those, ' + (crashesPed > 0 ? crashesPed.toLocaleString() : ' none');
@@ -173,7 +173,7 @@ Papa.parse('./data/crashes.csv', {
 
             // set full range display, where 0 = Jan and 11 = Dec
             min: dateToTS(new Date(2015, 0, 1)),
-            max: dateToTS(new Date(2023, 3, 1)),
+            max: dateToTS(new Date(2022, 11, 31)),
 
             from: initFrom,
             to: initTo,
@@ -223,6 +223,6 @@ Papa.parse('./data/crashes.csv', {
 })
 
 L.control.attribution({
-    prefix: 'View <a href="https://github.com/bikewesthartford/wh-crashes">code on GitHub</a> \
+    prefix: 'View <a href="https://github.com/datavizforall/hartford-crashes">code on GitHub</a> \
       and <a href="https://github.com/Picturedigits/hartford-crashes">original version by PictureDigits</a>'
 }).addTo(map)
