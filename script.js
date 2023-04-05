@@ -68,11 +68,11 @@ Papa.parse('./data/crashes.csv', {
                 text += ' involved a cyclist.';
             }
 
-            //TEMPORARILY removed this portion of statsText because count is wrong
+            // modified statsText about filter results
              text += ' <span class="i ' + (filtered ? '' : 'red') + '">'
-                 + (filtered ? filtered.toLocaleString() : 'No ') + ' crash'
-                 + (filtered === 1 ? '' : 'es') + ' satisf' + (filtered === 1 ? 'ies' : 'y')
-                 + ' your filtering criteria.</span>'
+                 + 'Your checkboxes below show '
+                 + (filtered ? filtered.toLocaleString() : 'no ') + ' crash'
+                 + (filtered === 1 ? '' : 'es') + '.</span>'
 
             $('#statsText').html(text)
 
@@ -138,8 +138,8 @@ Papa.parse('./data/crashes.csv', {
 
                     var circle = L.circleMarker([crash.x, crash.y], {
                         radius: 5,
-                        color: '#002147',
-                        fillColor: '#002147',
+                        color: '#ff0000',
+                        fillColor: '#ff0000',
                         fillOpacity: 0.8,
                         opacity: 0.8,
                         weight: 0,
