@@ -223,6 +223,6 @@ Papa.parse('./data/crashes.csv', {
 })
 
 L.control.attribution({
-    prefix: 'View <a href="https://github.com/datavizforall/hartford-crashes">code on GitHub</a> \
-      and <a href="https://github.com/Picturedigits/hartford-crashes">original code by PictureDigits</a>'
+    prefix: 'View <a href="https://github.com/datavizforall/hartford-crashes">code by DataVizForAll</a> \
+      and <a href="https://github.com/Picturedigits/hartford-crashes">original by PictureDigits</a>'
 }).addTo(map)
