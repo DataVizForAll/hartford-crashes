@@ -1,0 +1,1 @@
+Exported files _0 and _1 can be unzipped and processed in Python, but are too large to be uploaded in unzipped format to GitHub (over 100MB). So uploaded only the zipped version (23MB) for archival purposes.
